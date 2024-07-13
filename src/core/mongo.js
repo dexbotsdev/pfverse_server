@@ -16,8 +16,7 @@ const connectWithDb = async (cb, em) => {
   const connectionResult = await mongoose.connect(uri, options);
   // eslint-disable-next-line no-console
   console.log(
-    `Connected to mongoDB on database:
-    ${connectionResult.connections[0].name} at ${new Date().toDateString()}`
+    `Connected to mongoDB on database:${connectionResult.connections[0].name} at ${new Date().toDateString()}`
   );
   if (cb && em) cb(em);
 };

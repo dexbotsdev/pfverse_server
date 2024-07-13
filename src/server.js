@@ -39,7 +39,7 @@ const start = async () => {
       });
 
       await connectWithDb(broadcastDatabaseConnectionEstablished, eventEmitter);
-      logger.info(`Database connection established at ${new Date()}`);
+      logger.info(`Database connection established at ${new Date()} `);
     });
   } catch (err) {
     console.log(err)

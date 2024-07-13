@@ -9,11 +9,11 @@ const uri = isMongoDbUrl
   : `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 const options = {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true, 
   useCreateIndex: true,
 };
 const connectWithDb = async (cb, em) => {
-  const connectionResult = await mongoose.connect(uri, options);
+  const connectionResult = mongoose.connect("mongodb+srv://pfverser:ESdI5IrBlyhg0Sdi@cluster0.dmna9pi.mongodb.net/appdb?retryWrites=true&w=majority&appName=Cluster0", options);
   // eslint-disable-next-line no-console
   console.log(
     `Connected to mongoDB on database:${connectionResult.connections[0].name} at ${new Date().toDateString()}`

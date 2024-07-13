@@ -15,9 +15,7 @@ const options = {
 const connectWithDb = async (cb, em) => {
   const connectionResult = mongoose.connect("mongodb+srv://pfverser:ESdI5IrBlyhg0Sdi@cluster0.dmna9pi.mongodb.net/appdb?retryWrites=true&w=majority&appName=Cluster0", options);
   // eslint-disable-next-line no-console
-  console.log(
-    `Connected to mongoDB on database:${connectionResult.connections[0].name} at ${new Date().toDateString()}`
-  );
+  
   if (cb && em) cb(em);
 };
 module.exports = connectWithDb;
